@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>组件化应用构建</title>
+
+</head>
+
+<body>
+    <div id="app1">
+        <ol>
+            <!-- 创建一个 todo-item 组件的实例 -->
+            <todo-item v-for="item in groceryList" v-bind:tudo="item" v-bind:key="item.id">
+                <!--  -->
+            </todo-item>
+        </ol>
+    </div>
+
+    <div id="app2">
+
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+        Vue.component('todo-item', {
+            // todo-item 组件现在接受一个
+            // "prop"，类似于一个自定义特性。
+            // 这个 prop 名为 todo。
+            props: ['tudo'], //prop 接口
+            template: '<li>{{ tudo.text }}</li>'
+        })
+        var app1 = new Vue({
+            el: "#app1",
+            data: {
+                groceryList: [{
+                        id: 0,
+                        text: '蔬菜'
+                    },
+                    {
+                        id: 1,
+                        text: '西瓜'
+                    },
+                    {
+                        id: 2,
+                        text: '水蜜桃'
+                    }
+                ]
+            }
+        })
+
+        //创建一个数据对象
+        var data = {
+            a: 1
+        }
+        var vm = new Vue({
+            data: data
+        })
+        console.log(data.a == vm.a);
+    </script>
+</body>
+
+</html>

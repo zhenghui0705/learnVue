@@ -1,0 +1,62 @@
+@charset "UTF-8";
+body{font-family: "微软雅黑";}
+body,div,span,ul,ol,li,a{margin: 0;padding: 0;}
+ul li{list-style: none;}
+a{text-decoration: none;}
+/* 清除浮动 */
+#cleanfix::after{
+    content: "";
+    display: block;
+    height: 0;
+    overflow: hidden;
+    clear: both;
+}
+/* reset样式结束 */
+header{
+    background: #000000;
+}
+.top{
+    position: relative;
+}
+.gwhdth{
+    width: 1080px;
+    margin: 0 auto;
+}
+
+.logo{
+    width: 8em;
+    height: 4em;
+    background: #03a9f4;
+}
+
+.logo a{
+    margin-left: 38px;
+    line-height: 4em;
+}
+
+.nav{
+    position: absolute;
+    top: 0;
+    right: 0;
+
+}
+
+.nav ul li{
+    float: left;
+    line-height: 4em;
+}
+
+.nav ul li a{
+    display: block;
+    padding: 0 1em;
+    color: #cccccc;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* top样式结束 */
+#content{
+    width: 100%;
+    margin: o auto;
+    height: 100px;
+    background: brown;
+}
